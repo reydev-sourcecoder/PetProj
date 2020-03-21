@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReyTools.Android", "ReyTool
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReyTools.iOS", "ReyTools.iOS\ReyTools.iOS.csproj", "{3AAF8824-FF71-461D-992F-919E8D1C3553}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReyTools", "ReyTools\ReyTools.csproj", "{3D4CD7AF-64FA-464A-82FE-73F9D8299211}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReyTools", "ReyTools\ReyTools.csproj", "{3D4CD7AF-64FA-464A-82FE-73F9D8299211}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

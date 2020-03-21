@@ -1,28 +1,53 @@
-﻿using System;
+﻿using Prism;
+using Prism.Ioc;
+using Prism.Unity;
+using ReyTools.ViewModels;
+using ReyTools.Views;
+using System;
+using Unity;
+using Unity.Lifetime;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace ReyTools
 {
-    public partial class App : Application
+    public partial class App : PrismApplication
     {
-        public App()
-        {
-            InitializeComponent();
+        private IUnityContainer _unityContainer;
 
-            MainPage = new MainPage();
+        public App(IPlatformInitializer platformInitializer = null) : base(platformInitializer) {  }
+
+        protected override void OnInitialized()
+        {
+            try
+            {
+                InitializeComponent();
+
+                _unityContainer = Container.GetContainer();
+                _unityContainer.RegisterInstance(NavigationService, new ContainerControlledLifetimeManager());
+
+                SetMasterPageAndNavigateToPage(nameof(PageNames.PhonePrefixesPage));
+            }
+            catch (Exception ex)
+            {
+                // TODO : log here
+            }
         }
 
-        protected override void OnStart()
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterForNavigation<NavigationPage>();
+            containerRegistry.RegisterForNavigation<DashboardPage, DashboardPageViewModel>();
+            containerRegistry.RegisterForNavigation<PhonePrefixesPage, PhonePrefixesPageViewModel>();
+            containerRegistry.RegisterForNavigation<ZipCodesPage, ZipCodesPageViewModel>();
         }
 
-        protected override void OnSleep()
-        {
-        }
+        private void SetMasterPageAndNavigateToPage(string pageName)
+            => NavigationService.NavigateAsync($"{nameof(DashboardPage)}/{nameof(NavigationPage)}/{pageName}");
 
-        protected override void OnResume()
-        {
-        }
+        protected override void OnStart() { }
+
+        protected override void OnSleep() { }
+
+        protected override void OnResume() { }
     }
 }
