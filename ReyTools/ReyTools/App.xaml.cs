@@ -36,9 +36,9 @@ namespace ReyTools
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<DashboardPage, DashboardPageViewModel>();
-            containerRegistry.RegisterForNavigation<PhonePrefixesPage, PhonePrefixesPageViewModel>();
-            containerRegistry.RegisterForNavigation<ZipCodesPage, ZipCodesPageViewModel>();
+            containerRegistry.RegisterForNavigation<DashboardPage>();
+            containerRegistry.RegisterForNavigation<PhonePrefixesPage>();
+            containerRegistry.RegisterForNavigation<ZipCodesPage>();
         }
 
         private void SetMasterPageAndNavigateToPage(string pageName)

@@ -6,7 +6,9 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:pages="clr-namespace:ReyTools.Views"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
     Title="Zip Codes"
+    prism:ViewModelLocator.AutowireViewModel="True"
     mc:Ignorable="d">
     <ContentPage.Content>
         <StackLayout>

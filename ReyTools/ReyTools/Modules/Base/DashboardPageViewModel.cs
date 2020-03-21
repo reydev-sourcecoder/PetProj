@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 
 namespace ReyTools.ViewModels
 {
-    public class DashboardPageViewModel : BaseViewModel
+    public class DashboardPageViewModel : ViewModelBase
     {
         public List<MasterMenuItem> MenuItems { get; set; }
 
@@ -22,7 +22,14 @@ namespace ReyTools.ViewModels
             }
         }
 
-        public DashboardPageViewModel(INavigationService navigationService) : base(navigationService)
+        public DashboardPageViewModel(INavigationService navigationService) : base(navigationService) { }
+
+        public override void InitializePageBinding(INavigationParameters parameters)
+        {
+            InitializeMenuItems();
+        }
+
+        private void InitializeMenuItems()
         {
             MenuItems = new List<MasterMenuItem>
             {
@@ -39,20 +46,23 @@ namespace ReyTools.ViewModels
                     PageName = nameof(PageNames.ZipCodesPage)
                 }
             };
+
+            RaisePropertyChanged(nameof(MenuItems));
         }
 
         private void NavigateToMainPage(MasterMenuItem menuItem)
             => ChangeMasterDetailToPage(menuItem.PageName);
 
         #region INotifyPropertyChanged Implementation
-        public event PropertyChangedEventHandler PropertyChanged;
-        void OnPropertyChanged([CallerMemberName] string propertyName = "")
-        {
-            if (PropertyChanged == null)
-                return;
+        //public event PropertyChangedEventHandler PropertyChanged;
+        //void OnPropertyChanged([CallerMemberName] string propertyName = "")
+        //{
+        //    if (PropertyChanged == null)
+        //        return;
 
-            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        //    PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        //}
+
         #endregion
     }
 }
