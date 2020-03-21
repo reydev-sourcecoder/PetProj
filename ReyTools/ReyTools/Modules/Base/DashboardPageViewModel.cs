@@ -1,26 +1,29 @@
-﻿using Prism.Navigation;
+﻿using Prism.Commands;
+using Prism.Navigation;
 using ReyTools.Models;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows.Input;
 
 namespace ReyTools.ViewModels
 {
     public class DashboardPageViewModel : ViewModelBase
     {
+        public ICommand NavigateToPageCommand => new DelegateCommand<MasterMenuItem>(NavigateToMainPage);
         public List<MasterMenuItem> MenuItems { get; set; }
 
-        private MasterMenuItem _selectedMenuItem;
-        public MasterMenuItem SelectedMenuItem
-        {
-            get { return _selectedMenuItem; }
-            set
-            {
-                _selectedMenuItem = value;
-                if (value != null)
-                    NavigateToMainPage(_selectedMenuItem);
-            }
-        }
+        //private MasterMenuItem _selectedMenuItem;
+        //public MasterMenuItem SelectedMenuItem
+        //{
+        //    get { return _selectedMenuItem; }
+        //    set
+        //    {
+        //        _selectedMenuItem = value;
+        //        if (value != null)
+        //            NavigateToMainPage(_selectedMenuItem);
+        //    }
+        //}
 
         public DashboardPageViewModel(INavigationService navigationService) : base(navigationService) { }
 

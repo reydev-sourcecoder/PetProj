@@ -6,17 +6,18 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    x:Name="masterPage"
     prism:ViewModelLocator.AutowireViewModel="True"
     mc:Ignorable="d">
     <MasterDetailPage.Master>
         <ContentPage Title="ReyTools">
-            <StackLayout>
-                <ListView
-                    HasUnevenRows="true"
-                    ItemsSource="{Binding MenuItems}"
-                    SelectedItem="{Binding SelectedMenuItem}"
-                    SeparatorVisibility="None">
-                    <ListView.Header>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <CollectionView Grid.Row="0" ItemsSource="{Binding MenuItems}">
+                    <CollectionView.Header>
                         <Grid BackgroundColor="#03A9F4">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="10" />
@@ -37,22 +38,37 @@
                                 Text="Rey Tools"
                                 TextColor="White" />
                         </Grid>
-                    </ListView.Header>
-                    <ListView.ItemTemplate>
+                    </CollectionView.Header>
+                    <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell>
-                                <StackLayout Padding="15,10" HorizontalOptions="FillAndExpand">
-                                    <Label
-                                        FontSize="24"
-                                        Text="{Binding Title}"
-                                        VerticalOptions="FillAndExpand"
-                                        VerticalTextAlignment="Center" />
-                                </StackLayout>
-                            </ViewCell>
+                            <StackLayout
+                                Margin="0,0,0,0"
+                                Padding="15,5"
+                                HeightRequest="50"
+                                HorizontalOptions="FillAndExpand"
+                                Spacing="5"
+                                VerticalOptions="Center">
+                                <Label
+                                    FontSize="15"
+                                    Text="{Binding Title}"
+                                    VerticalOptions="FillAndExpand"
+                                    VerticalTextAlignment="Center" />
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Command="{Binding BindingContext.NavigateToPageCommand, Source={x:Reference masterPage}}"
+                                        CommandParameter="{Binding .}"
+                                        NumberOfTapsRequired="1" />
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
                         </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </StackLayout>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <Label
+                    Grid.Row="1"
+                    Margin="15,0,0,10"
+                    Text="version 1.0.0.0" />
+            </Grid>
         </ContentPage>
     </MasterDetailPage.Master>
 </MasterDetailPage>

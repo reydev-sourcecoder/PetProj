@@ -14,7 +14,7 @@
         <StackLayout>
             <Label
                 HorizontalOptions="CenterAndExpand"
-                Text="Welcome to Xamarin.Forms!"
+                Text="NOT YET AVAILABLE"
                 VerticalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>
