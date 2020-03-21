@@ -7,22 +7,13 @@ namespace ReyTools.ViewModels
     {
         protected readonly INavigationService NavigationService;
 
-        protected ViewModelBase(INavigationService navigationService)
-        {
-            NavigationService = navigationService;
-        }
+        protected ViewModelBase(INavigationService navigationService) => NavigationService = navigationService;
 
         public void Initialize(INavigationParameters parameters) => InitializePageBinding(parameters);
 
-        public void OnNavigatedFrom(INavigationParameters parameters)
-        {
-            
-        }
+        public void OnNavigatedFrom(INavigationParameters parameters) { }
 
-        public void OnNavigatedTo(INavigationParameters parameters)
-        {
-           
-        }
+        public void OnNavigatedTo(INavigationParameters parameters) { }
 
         protected async void ChangeMasterDetailToPage(string pageName) 
             => await NavigationService.NavigateAsync($"{nameof(PageNames.NavigationPage)}/{pageName}");

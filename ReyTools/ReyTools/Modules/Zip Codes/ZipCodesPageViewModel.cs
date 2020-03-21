@@ -8,14 +8,6 @@ namespace ReyTools.ViewModels
         {
         }
 
-        /// <summary>
-        /// This would be the implementation of Initialize(INavigationParameters parameters)
-        /// in the ViewModelBase
-        /// </summary>
-        /// <param name="parameters">The parameters that are being passed between pages</param>
-        public override void InitializePageBinding(INavigationParameters parameters)
-        {
-           
-        }
+        public override void InitializePageBinding(INavigationParameters parameters) {  }
     }
 }

@@ -5,12 +5,9 @@ namespace ReyTools.Data
     public static class FakeData
     {
         private static IEnumerable<MobilePrefix> MobilePrefixesField;
-        public static IEnumerable<MobilePrefix> MobilePrefixes => MobilePrefixesField; 
+        public static IEnumerable<MobilePrefix> MobilePrefixes => MobilePrefixesField;
 
-        static FakeData()
-        {
-            InitializeData();
-        }
+        static FakeData() => InitializeData();
 
         private static void InitializeData()
         {

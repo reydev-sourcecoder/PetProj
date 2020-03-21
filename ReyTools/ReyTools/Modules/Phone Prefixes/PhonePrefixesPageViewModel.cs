@@ -35,10 +35,7 @@ namespace ReyTools.ViewModels
         }
 
 
-        public PhonePrefixesPageViewModel(INavigationService navigationService) : base(navigationService)
-        {
-            
-        }
+        public PhonePrefixesPageViewModel(INavigationService navigationService) : base(navigationService) { }
 
         public override void InitializePageBinding(INavigationParameters parameters)
         {
