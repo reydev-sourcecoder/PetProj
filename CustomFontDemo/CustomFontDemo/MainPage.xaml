@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--  reference : https://casoftware-blog.azurewebsites.net/2018/09/23/custom-fonts-and-icons-in-xamarin-forms/  -->
+<ContentPage
+    x:Class="CustomFontDemo.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    BackgroundColor="{DynamicResource pageBackground}"
+    mc:Ignorable="d">
+    <StackLayout Margin="0,20,0,10" Spacing="20">
+        <StackLayout
+            HorizontalOptions="EndAndExpand"
+            Orientation="Horizontal"
+            Spacing="10"
+            VerticalOptions="Start">
+            <Label
+                HorizontalTextAlignment="End"
+                Text="Enable Dark Mode?"
+                TextColor="{DynamicResource primaryTextColor}"
+                VerticalTextAlignment="Start" />
+            <Switch
+                HorizontalOptions="EndAndExpand"
+                IsToggled="False"
+                OnColor="Green"
+                Toggled="Switch_Toggled"
+                VerticalOptions="Start" />
+        </StackLayout>
+        <StackLayout
+            Margin="0,70,0,0"
+            HorizontalOptions="CenterAndExpand"
+            Orientation="Horizontal"
+            Spacing="10"
+            VerticalOptions="Center">
+            <Label
+                FontFamily="fontawesomeregular.otf#Regular"
+                Style="{StaticResource IconSize}"
+                Text="&#xf2c2;" />
+            <Label
+                FontFamily="fontawesomeregular.otf#FontAwesome5FreeRegular"
+                Style="{StaticResource IconSize}"
+                Text="&#xf004;" />
+            <Label
+                FontFamily="fontawesomeregular.otf#FontAwesome5FreeRegular"
+                Style="{StaticResource IconSize}"
+                Text="&#xf0e0;" />
+            <Label
+                FontFamily="fontawesomesolid.otf#FontAwesome5FreeSolid"
+                Style="{StaticResource IconSize}"
+                Text="&#xf0c0;" />
+            <Label
+                FontFamily="fontawesomesolid.otf#FontAwesome5FreeSolid"
+                Style="{StaticResource IconSize}"
+                Text="&#xf085;" />
+            <Label
+                FontFamily="fontawesomesolid.otf#FontAwesome5FreeSolid"
+                Style="{StaticResource IconSize}"
+                Text="&#xf1c0;" />
+        </StackLayout>
+        <StackLayout Spacing="30">
+            <Label
+                FontFamily="twobit.otf#Twobit"
+                Style="{StaticResource TextSize}"
+                Text="Computer !"
+                TextColor="{DynamicResource blueColor}" />
+            <Label
+                FontFamily="chowfun.ttf#ChowFun"
+                Style="{StaticResource TextSize}"
+                Text="Chinese !"
+                TextColor="SeaGreen" />
+            <Label
+                FontFamily="blackletter.ttf#BlackletterExtraBold"
+                Style="{StaticResource TextSize}"
+                Text="Gothic !"
+                TextColor="{DynamicResource primaryContrastTextColor}" />
+            <Label
+                FontFamily="barnhouse.otf#BarnHouse"
+                Style="{StaticResource TextSize}"
+                Text="Horror"
+                TextColor="Red" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
