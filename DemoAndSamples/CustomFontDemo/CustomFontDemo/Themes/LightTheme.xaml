@@ -10,4 +10,5 @@
     <Color x:Key="primaryTextColor">Green</Color>
     <Color x:Key="primaryContrastTextColor">Black</Color>
     <Color x:Key="blueColor">Blue</Color>
+    <Color x:Key="barBackgroundColor">#2196F3</Color>
 </ResourceDictionary>
