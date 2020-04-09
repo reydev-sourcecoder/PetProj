@@ -8,10 +8,7 @@ namespace CustomFontDemo.Themes
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DarkTheme : ResourceDictionary, ITheme
     {
-        public DarkTheme()
-        {
-            InitializeComponent();
-        }
+        public DarkTheme() => InitializeComponent();
 
         public void SetAsTheme()
         {

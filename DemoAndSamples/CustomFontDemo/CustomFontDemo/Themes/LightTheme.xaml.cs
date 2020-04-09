@@ -1,17 +1,14 @@
-﻿using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace CustomFontDemo.Themes
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LightTheme : ResourceDictionary, ITheme
     {
-        public LightTheme()
-        {
-            InitializeComponent();
-        }
+        public LightTheme() => InitializeComponent();
 
         public void SetAsTheme()
         {

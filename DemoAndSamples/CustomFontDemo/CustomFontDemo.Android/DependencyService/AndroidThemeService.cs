@@ -1,9 +1,9 @@
-﻿using CustomFontDemo.Themes;
-using System;
-using XF = Xamarin.Forms;
-using System.Drawing;
+﻿// reference https://montemagno.com/setting-android-status-bar-background-icon-colors/
 using Android.OS;
+using CustomFontDemo.Themes;
+using System.Drawing;
 using Xamarin.Essentials;
+using XF = Xamarin.Forms;
 
 [assembly: XF.Dependency(typeof(CustomFontDemo.Droid.AndroidThemeService))]
 namespace CustomFontDemo.Droid
@@ -18,7 +18,7 @@ namespace CustomFontDemo.Droid
                 SetStatusBarColor(ColorConverters.FromHex("#1976D2"), false);
         }
 
-        public void SetStatusBarColor(Color color, bool darkStatusBarTint)
+        private void SetStatusBarColor(Color color, bool darkStatusBarTint)
         {
             if (Build.VERSION.SdkInt < BuildVersionCodes.Lollipop)
                 return;

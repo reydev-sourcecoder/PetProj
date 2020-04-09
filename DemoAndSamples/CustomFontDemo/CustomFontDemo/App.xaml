@@ -8,7 +8,6 @@
     mc:Ignorable="d">
     <Application.Resources>
         <ResourceDictionary Source="Themes/LightTheme.xaml" />
-
         <Style x:Key="TextSize" TargetType="Label">
             <Setter Property="FontSize" Value="40" />
             <Setter Property="HorizontalOptions" Value="Center" />
